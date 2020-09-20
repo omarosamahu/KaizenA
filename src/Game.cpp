@@ -2,6 +2,7 @@
 
 
 
+
 Game::Game(){}
 
 Game::~Game(){}
@@ -32,16 +33,15 @@ void Game::init(const char* title,int xpos,int ypos,int width,int height,bool fl
         isRunning = false;
     }
     
-    playerTex = TextureManager::loadTexture("../assets/img.png",rendrer);
+    // playerTex = TextureManager::loadTexture("../assets/img.png",rendrer);
+    player = new GameObject("../assets/img.png",rendrer,0,0);
+    enemy = new GameObject("../assets/img.png",rendrer,50,50);
 }
 
 void Game::update(){
-    cnt += 1;
-
-    dstrec.h = 64;
-    dstrec.w = 64;
-    dstrec.x = cnt;
-    
+ 
+    player->Update();
+    enemy->Update();   
 }
 
 void Game::handleEvent(){
@@ -59,7 +59,8 @@ void Game::handleEvent(){
 }
 void Game::render(){
     SDL_RenderClear(rendrer);
-    SDL_RenderCopy(rendrer,playerTex,NULL,&dstrec); 
+    player->Render();
+    enemy->Render();
     SDL_RenderPresent(rendrer);
 }
 void Game::clean(){

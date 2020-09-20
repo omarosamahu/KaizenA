@@ -3,9 +3,9 @@
 
 #include <iostream>
 // Internal
-#include "core.h"
-#include "TextureManager.h"
-
+// #include <core.h>
+// #include <TextureManager.h>
+#include <GameObject.h>
 
 class Game{
 public:
@@ -18,10 +18,12 @@ public:
     void render();
     inline bool running(){ return isRunning;}
 private:
-    SDL_Texture *playerTex;
-    SDL_Rect srcRec,dstrec;
+    //SDL_Texture *playerTex;
+    //SDL_Rect srcRec,dstrec;
     SDL_Window *window;
     SDL_Renderer *rendrer;
+    GameObject* player;
+    GameObject* enemy;
     bool isRunning;
     int cnt;
 };

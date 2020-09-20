@@ -13,6 +13,7 @@ PKG_SEARCH_MODULE(SDL2IMAGE REQUIRED SDL2_image>=2.0.0)
 add_executable(game 
                 src/main.cpp
                 src/Game.cpp 
+                src/GameObject.cpp
                 src/TextureManager.cpp
                )
 target_include_directories(game 
