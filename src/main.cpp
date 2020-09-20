@@ -1,4 +1,4 @@
-#include "Game.h"
+#include <Game.h>
 
 Game *mGame = nullptr;
 int main(int argc, char const *argv[])
