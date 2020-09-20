@@ -32,7 +32,7 @@ void Game::init(const char* title,int xpos,int ypos,int width,int height,bool fl
         isRunning = false;
     }
     
-    playerTex = TextureManager::loadTexture("assets/img.png",rendrer);
+    playerTex = TextureManager::loadTexture("../assets/img.png",rendrer);
 }
 
 void Game::update(){
